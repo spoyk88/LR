@@ -1,0 +1,80 @@
+var studentsData = [
+  {
+    прізвище: "Петров",
+    рік_народження: 2000,
+    дисципліни: {
+      математика: 10,
+      фізика: 9,
+      хімія: 10,
+    },
+  },
+  {
+    
+    прізвище: "Іванова",
+    рік_народження: 2001,
+    дисципліни: {
+      математика: 8,
+      фізика: 5,
+      хімія: 7,
+    },
+  },
+  {
+    
+    прізвище: "Сидоров",
+    рік_народження: 1999,
+    дисципліни: {
+      математика: 5,
+      фізика: 8,
+      хімія: 7,
+    },
+  },
+];
+function displayStudentInfo() {
+  for (var i = 0; i < studentsData.length; i++) {
+    var student = studentsData[i];
+    var totalScore = 0;
+    var subjectCount = 0;
+    
+    for (var subject in student.дисципліни) {
+      totalScore += student.дисципліни[subject];
+      subjectCount++;
+    }
+    
+    var averageScore = totalScore / subjectCount;
+    
+        Logger.log("Прізвище: " + student.прізвище);
+    Logger.log("Рік народження: " + student.рік_народження);
+    Logger.log("Середній бал: " + averageScore);
+  }
+}
+function displayStudentsBySubject(subjectName) {
+  studentsData.sort(function (a, b) {
+    return b.дисципліни[subjectName] - a.дисципліни[subjectName];
+  });
+
+  for (var i = 0; i < studentsData.length; i++) {
+    var student = studentsData[i];
+       Logger.log("Прізвище: " + student.прізвище);
+    Logger.log("Оцінка за " + subjectName + ": " + student.дисципліни[subjectName]);
+  }
+}
+function displayStudentsWithMinimumAverageGrade(minGrade) {
+  for (var i = 0; i < studentsData.length; i++) {
+    var student = studentsData[i];
+    var totalScore = 0;
+    var subjectCount = 0;
+    
+    for (var subject in student.дисципліни) {
+      totalScore += student.дисципліни[subject];
+      subjectCount++;
+    }
+    
+    var averageScore = totalScore / subjectCount;
+    
+    if (averageScore >= minGrade) {
+            Logger.log("Прізвище: " + student.прізвище);
+      Logger.log("Середній бал: " + averageScore);
+    }
+  }
+}
+
