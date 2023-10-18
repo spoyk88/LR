@@ -1,0 +1,11 @@
+function sendEmail() {
+  var recipient = ""; // Пошта отримувача
+  var subject = "Lab4.2"; // Тема листа
+  var body = "Сеген Дмитро"; // Тіло листа
+
+  MailApp.sendEmail(recipient, subject, body);
+
+  // Логування теми та отримувача листа
+  Logger.log("Тема листа: " + subject);
+  Logger.log("Отримувач листа: " + recipient);
+}
