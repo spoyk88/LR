@@ -1,0 +1,12 @@
+function insertImage() {
+  var document = DocumentApp.getActiveDocument();
+  var body = document.getBody();
+
+  var image = UrlFetchApp.fetch('https://www.rv-it.college/images/banners/logo_IT_short_white.png').getBlob();
+  
+  // Вставка зображення
+  var insertedImage = body.appendImage(image);
+
+  // Встановлення відступу справа (наприклад, 100 пікселів)
+  insertedImage.setWidth(100);
+}
