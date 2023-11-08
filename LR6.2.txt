@@ -1,0 +1,18 @@
+function fillApplication() {
+  var doc = DocumentApp.openById('1ADb69bg0DajI3POFvMYyIP_PoNdkCIbvva89vUq8Y2E'); // Відкрити документ
+  var body = doc.getBody(); // Отримати тіло документа
+
+  // Замінити заповнювачі
+  var full_name = 'Сеген Дмитро'; // Замінити на реальне ПІБ
+  var date_of_birth = '27.02.2005'; // Замінити на реальну дату народження
+
+  // Отримати текст документа
+  var textDocument = body.getText();
+
+  // Замінити заповнювачі в тексті документа
+  textDocument = textDocument.replace('{ПІБ}', full_name);
+  textDocument = textDocument.replace('{Дата народження}', date_of_birth);
+
+  // Встановити оновлений текст у тіло документа
+  body.setText(textDocument);
+}
