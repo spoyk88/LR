@@ -1,0 +1,21 @@
+function копіюватиДокументІЗамінитиПІБ() {
+  var початковийДокументId = '1vXe2Dk6yUEyPmiXG4Zmrv07Bi_XBkUVP_RAsSHWPLOk';
+  var початковийДокумент = DocumentApp.openById(початковийДокументId);
+
+  var оригінальнийПІБ = 'Сеген Дмитро';
+  var вашеПІБ = 'Савтира Олександр';
+
+  var копіяДокументу = початковийДокумент.makeCopy();
+
+  var копіяДокументуId = копіяДокументу.getId();
+  var копіяДокументу = DocumentApp.openById("1y0lYKCVSa0zS0-2X2frD_cZSWqok2Uv0gkedagdgq1s");
+  var body = копіяДокументу.getBody();
+
+  var текстДокументу = body.getText();
+  текстДокументу = текстДокументу.replace(оригінальнийПІБ, вашеПІБ);
+  body.setText(текстДокументу);
+
+  копіяДокументу.saveAndClose();
+
+  Logger.log('Створено копію та замінено ПІБ автора.');
+}
