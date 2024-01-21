@@ -1,0 +1,4 @@
+mass = float(input("маса в кг:"))
+preskorenia = float(input("прискореня:"))
+force = mass * preskorenia
+print(f"відпвідь{force}")

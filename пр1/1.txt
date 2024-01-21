@@ -1,0 +1,9 @@
+def age_to_days(age):
+    days_in_year = 365
+    days_lived = age * days_in_year
+    return days_lived
+age = int(input("¬вед≥ть св≥й в≥к: "))
+result = age_to_days(age)
+print(f"¬и прожили приблизно {result} дн≥в.")
+
+	
