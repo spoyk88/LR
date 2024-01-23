@@ -1,0 +1,10 @@
+def is_prime(num):
+    return num > 1 and all(num % i != 0 for i in range(2, int(num**0.5) + 1))
+
+def print_primes_in_range(start, end):
+    primes = [num for num in range(start, end + 1) if is_prime(num)]
+    print(f"Прості числа у діапазоні від {start} до {end}: {primes}")
+
+if __name__ == "__main__":
+    start_range, end_range = map(int, input("Введіть початок та кінець діапазону через пробіл: ").split())
+    print_primes_in_range(start_range, end_range)
