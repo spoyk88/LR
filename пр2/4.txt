@@ -1,0 +1,9 @@
+def is_palindrome(input_str):
+    cleaned_str = ''.join(char.lower() for char in input_str if char.isalnum())
+    reversed_str = cleaned_str[::-1]
+    return cleaned_str == reversed_str
+user_input = input("Введіть рядок: ")
+if is_palindrome(user_input):
+    print("Введений рядок є паліндромом.")
+else:
+    print("Введений рядок не є паліндромом.")
