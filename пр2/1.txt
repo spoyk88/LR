@@ -1,0 +1,15 @@
+def average_of_nonnegative_numbers(numbers):
+    nonnegative_numbers = [num for num in numbers if num >= 0]
+    if not nonnegative_numbers:
+        return "Немає невід'ємних чисел у списку"
+    else:
+        return sum(nonnegative_numbers) / len(nonnegative_numbers)
+
+def main():
+    numbers = input("Введіть числа через пробіл: ").split()
+    numbers = [int(num) for num in numbers]
+    average = average_of_nonnegative_numbers(numbers)
+    print("Середнє арифметичне невід'ємних чисел у списку:", average)
+
+if __name__ == "__main__":
+    main()
