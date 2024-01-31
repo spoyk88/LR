@@ -1,0 +1,7 @@
+def dict_to_list_of_tuples(dictionary):
+    return list(dictionary.items())
+sample_dict = {'a': 1, 'b': 2, 'c': 3}
+result = dict_to_list_of_tuples(sample_dict)
+print(result)
+
+
