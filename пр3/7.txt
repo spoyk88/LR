@@ -1,0 +1,6 @@
+def count_words(sentence):
+    words = sentence.split()  
+    return len(words)  
+input_string = "Добрий ранок"
+word_count = count_words(input_string)
+print(f"Кількість слів у рядку: {word_count}")

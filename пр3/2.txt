@@ -1,0 +1,13 @@
+def power(base, exponent):
+    result = 1
+    
+    if exponent < 0:
+        base = 1 / base
+        exponent = -exponent
+    for _ in range(exponent):
+        result *= base
+    return result
+base = 2
+exponent = 3
+print(f"{base} піднесене до степеня {exponent} дорівнює {power(base, exponent)}")
+

@@ -1,0 +1,7 @@
+def km_to_miles(km):
+    miles = km * 0.621371
+    return miles
+
+distance_in_km = 10
+distance_in_miles = km_to_miles(distance_in_km)
+print(f"{distance_in_km} км = {distance_in_miles} миль")
