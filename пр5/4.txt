@@ -1,0 +1,22 @@
+class Order:
+    def __init__(self, product, quantity, price):
+        self.__product = product
+        self.__quantity = quantity
+        self.__price = price
+
+    def get_total_price(self):
+        return self.__quantity * self.__price
+
+class Customer:
+    def place_order(self, product, quantity, price, order_processor):
+        order = Order(product, quantity, price)
+        order_processor.process_order(order)
+
+class OrderProcessor:
+    def process_order(self, order):
+        total_price = order.get_total_price()г
+        print(f"Обробляється замовлення на {order._Order__product} загальною ціною {total_price} доларів США")
+
+customer = Customer()
+order_processor = OrderProcessor()
+customer.place_order("Ноутбук", 1, 2000, order_processor)

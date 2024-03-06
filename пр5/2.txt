@@ -1,0 +1,30 @@
+import math
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+class LineSegment:
+    def __init__(self, start_point, end_point):
+        self.start_point = start_point
+        self.end_point = end_point
+
+    def length(self):
+        return math.sqrt((self.end_point.x - self.start_point.x) ** 2 +
+                         (self.end_point.y - self.start_point.y) ** 2)
+class Triangle:
+    def __init__(self, segment1, segment2, segment3):
+        self.segment1 = segment1
+        self.segment2 = segment2
+        self.segment3 = segment3
+    def perimeter(self):
+        return self.segment1.length() + self.segment2.length() + self.segment3.length()
+point1 = Point(0, 0)
+point2 = Point(3, 4)
+point3 = Point(6, 0)
+segment1 = LineSegment(point1, point2)
+segment2 = LineSegment(point2, point3)
+segment3 = LineSegment(point3, point1)
+triangle = Triangle(segment1, segment2, segment3)
+print("Периметр трикутника:", triangle.perimeter())
